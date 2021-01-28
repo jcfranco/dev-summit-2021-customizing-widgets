@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "tsc",
+    "start": "tsc",
     "prettify": "prettier --write \"demos/**/*.{css,html,ts,tsx}\""
   },
   "repository": {
@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/jcfranco/dev-summit-2021-customizing-widgets#readme",
   "dependencies": {
-    "esri-reveal.js-templates": "git+https://github.com/esri/reveal.js.git#153be4b866aa342b2ffe9a6c9401341bdb4ccd54"
+    "esri-reveal.js-templates": "git+https://github.com/esri/reveal.js.git"
   },
   "devDependencies": {
     "@types/arcgis-js-api": "~4.14.0",

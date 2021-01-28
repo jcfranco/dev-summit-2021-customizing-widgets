@@ -1,4 +1,4 @@
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-1.png" data-background-size="cover" -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-1.png" data-background-size="cover" -->
 <!-- Presenter: Matt -->
 
 # ArcGIS API for JavaScript: Customizing Widgets
@@ -42,7 +42,7 @@
 
 <h2>Theming</h2>
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-3.png" data-background-size="cover"  -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
 ---
 
@@ -70,7 +70,7 @@ Using a theme requires only a slight update to the CSS path.
 
 ---
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-4.png" data-background-size="cover"  -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover"  -->
 
 **Theme Switcher**
 
@@ -244,7 +244,7 @@ $button-color--hover: darken($button-color, 10%) !default;
 
 ---
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-4.png" data-background-size="cover" -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover" -->
 
 **Custom Theme**
 
@@ -268,7 +268,7 @@ $button-color--hover: darken($button-color, 10%) !default;
 <!-- NEXT PART  A -->
 <h1>End Part I</h1>
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-3.png" data-background-size="cover"  -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
 ---
 
@@ -277,7 +277,7 @@ $button-color--hover: darken($button-color, 10%) !default;
 
 <h2>Views</h2>
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-3.png" data-background-size="cover"  -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
 ---
 
@@ -381,7 +381,7 @@ interface CustomScaleRangeSlider {
 
 ---
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-4.png" data-background-size="cover" -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover" -->
 
 Recreating a view
 
@@ -414,7 +414,7 @@ What have we learned about Widget Views?
 
 <h2>Extending a View</h2>
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-3.png" data-background-size="cover"  -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
 ---
 
@@ -429,7 +429,7 @@ What have we learned about Widget Views?
 
 ---
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-4.png" data-background-size="cover"  -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover"  -->
 
 # Part III: Extending a View
 
@@ -458,7 +458,7 @@ What have we learned about Widget Views?
 <!-- NEXT PART A -->
 <h1>End Part III</h1>
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-3.png" data-background-size="cover"  -->
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
 ---
 
@@ -494,7 +494,7 @@ What have we learned about Widget Views?
 
 > Where can I find the slides/source?
 
-[bit.ly/buildwidgetsds20](http://bit.ly/buildwidgetsds20) 
+[bit.ly/buildwidgetsds20](http://bit.ly/buildwidgetsds21) 
 
 > Where can I submit a question? 
 
@@ -502,6 +502,6 @@ What have we learned about Widget Views?
 
 ---
 
-![Esri](../node_modules/esri-reveal.js-templates/img/esri-science-logo-white.png)
+<section data-markdown data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-5.png">
 
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2020/devsummit/bg-2.png" data-background-size="cover" -->
+<img src="../node_modules/esri-reveal.js-templates/img/esri-science-logo-white.png" />
