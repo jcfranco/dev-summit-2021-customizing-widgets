@@ -70,14 +70,12 @@ class LayerFX extends Widget {
   //--------------------------------------------------------------------------
 
   private renderEffectSliderLabel = ({
-    enabled,
     name,
     min,
     max,
     value,
     oninput
   }: {
-    enabled: boolean;
     value: number;
     min: number;
     max: number;
@@ -87,24 +85,24 @@ class LayerFX extends Widget {
     return (
       <label>
         {name}:
-        <calcite-slider
-          disabled={false}
+        <input
+          class={CSS.slider}
+          type="range"
           min={min}
           max={max}
           value={value}
-          onCalciteSliderUpdate={oninput}
+          oninput={oninput}
         />
       </label>
     );
   };
 
   protected renderEffectValue = (effect: LayerEffect, value: number, index: number) => {
-    const { valueTypes, enabled } = effect;
+    const { valueTypes } = effect;
     const valueType = valueTypes[index];
     const { name, min, max } = valueType;
 
     return this.renderEffectSliderLabel({
-      enabled,
       name: name || this.messages.value,
       min,
       max,
@@ -123,9 +121,11 @@ class LayerFX extends Widget {
     return (
       <label>
         {this.messages[effect.id]}
-        <calcite-switch
-          switched={enabled}
-          onCalciteSwitchChange={(event: CustomEvent) => this.updateEnabled(event, effect)}
+        <input
+          class={CSS.checkbox}
+          type="checkbox"
+          checked={enabled}
+          onchange={(event: Event) => this.updateEnabled(event, effect)}
         />
       </label>
     );
