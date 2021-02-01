@@ -88,11 +88,16 @@ class LayerFX extends Widget {
       <label>
         {name}:
         <calcite-slider
-          disabled={false}
+          disabled={!enabled}
           min={min}
           max={max}
           value={value}
-          onCalciteSliderUpdate={oninput}
+          afterCreate={(el: HTMLElement) => {
+            el.addEventListener("calciteSliderUpdate", oninput);
+          }}
+          afterRemoved={(el: HTMLElement) => {
+            el.removeEventListener("calciteSliderUpdate", oninput);
+          }}
         />
       </label>
     );
@@ -109,7 +114,7 @@ class LayerFX extends Widget {
       min,
       max,
       value,
-      oninput: (event: Event) => this.updateValue(event, effect, index)
+      oninput: (event: CustomEvent) => this.updateValue(event, effect, index)
     });
   };
 
@@ -125,7 +130,16 @@ class LayerFX extends Widget {
         {this.messages[effect.id]}
         <calcite-switch
           switched={enabled}
-          onCalciteSwitchChange={(event: CustomEvent) => this.updateEnabled(event, effect)}
+          afterCreate={(el: HTMLElement) => {
+            el.addEventListener("calciteSwitchChange", (event: CustomEvent) =>
+              this.updateEnabled(event, effect)
+            );
+          }}
+          afterRemoved={(el: HTMLElement) => {
+            el.removeEventListener("calciteSwitchChange", (event: CustomEvent) =>
+              this.updateEnabled(event, effect)
+            );
+          }}
         />
       </label>
     );
@@ -146,15 +160,16 @@ class LayerFX extends Widget {
   //
   //--------------------------------------------------------------------------
 
-  private updateEnabled = (event: Event, effect: LayerEffect) => {
-    const target = event.target as HTMLInputElement;
-    effect.enabled = !!target.checked;
+  private updateEnabled = (event: CustomEvent, effect: LayerEffect) => {
+    console.log(event);
+    const target = event.target as any;
+    effect.enabled = !!target.switched;
   };
 
-  private updateValue = (event: Event, effect: LayerEffect, index: number) => {
-    const target = event.target as HTMLInputElement;
+  private updateValue = (event: CustomEvent, effect: LayerEffect, index: number) => {
+    const target = event.target as any;
     const value = effect.values.slice();
-    value[index] = target.valueAsNumber;
+    value[index] = parseInt(target.value, 10);
     effect.values = value;
   };
 }
