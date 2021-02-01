@@ -1,0 +1,18 @@
+{
+  "title": "Layer FX",
+  "value": "Value",
+  "bloom": "Bloom",
+  "blur": "Blur",
+  "brightness": "Brightness",
+  "contrast": "Contrast",
+  "drop-shadow": "Drop shadow",
+  "grayscale": "Grayscale",
+  "hue-rotate": "Hue rotate",
+  "invert": "Invert",
+  "opacity": "Opacity",
+  "saturate": "Saturate",
+  "sepia": "Sepia",
+  "radius": "Radius",
+  "strength": "Strength",
+  "threshold": "Threshold"
+}

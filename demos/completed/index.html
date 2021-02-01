@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+  <title>ArcGIS API for JavaScript: Building Your Own Widget</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/next/esri/css/main.css" />
+  <link rel="stylesheet" href="./app/css/LayerFx.css" />
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <script type="text/javascript">
+    var href = location.href;
+    var demoLocation = href.slice(0, href.lastIndexOf("/"));
+    var dojoConfig = {
+      // configure loader to create demo modules (non-CDN) from the correct location.
+      packages: [
+        {
+          name: "demos",
+          location: `${demoLocation}/..`
+        },
+        {
+          name: "demo",
+          location: `${demoLocation}/app`
+        }
+      ]
+    };
+  </script>
+  <script src="https://js.arcgis.com/next"></script>
+  <script>
+    require([
+      "esri/intl",
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "demo/LayerFX"
+    ], function (
+      intl,
+      Map,
+      MapView,
+      FeatureLayer,
+      LayerFX
+    ) {
+
+      const layer = new FeatureLayer({
+        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/BLS_Monthly_Unemployment_Current_14_Months/FeatureServer/2",
+        minScale: 0,
+        maxScale: 0
+      });
+
+      const map = new Map({
+        basemap: "dark-gray-vector",
+        layers: [layer]
+      });
+
+      const view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-100, 40],
+        zoom: 3
+      });
+
+      // register message bundle loader for LayerFX messages
+      intl.registerMessageBundleLoader({
+        pattern: "esri/demo/app/",
+        async fetchMessageBundle(bundleId, locale) {
+          locale = intl.normalizeMessageBundleLocale(locale);
+          const relativePath = bundleId.replace("esri/demo/", "");
+          const bundlePath = `./${relativePath}_${locale}.json`;
+          const response = await fetch(bundlePath);
+          return response.json();
+        }
+      });
+
+      var layerFX = new LayerFX({ layer });
+
+      view.ui.add(layerFX, "top-right");
+
+      // add to window for demo
+      window.layerFX = layerFX;
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
