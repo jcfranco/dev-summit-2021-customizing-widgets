@@ -53,12 +53,20 @@ class LayerFX extends Widget {
   //--------------------------------------------------------------------------
 
   render() {
-    const { effects } = this.viewModel;
+    const { effects, state } = this.viewModel;
 
     return (
       <div class={this.classes(CSS.root, CSS.esriWidget, CSS.esriWidgetPanel)}>
-        <h2>{this.messages.title}</h2>
-        <div class={CSS.container}>{effects.map(this.renderEffect).toArray()}</div>
+        <calcite-block
+          open
+          heading={this.messages.title}
+          summary={this.messages.summary}
+          disabled={state === "disabled"}
+          loading={state === "loading"}
+          theme="dark"
+        >
+          {effects.map(this.renderEffect).toArray()}
+        </calcite-block>
       </div>
     );
   }
@@ -85,7 +93,7 @@ class LayerFX extends Widget {
     oninput: (event: Event) => void;
   }) => {
     return (
-      <label>
+      <calcite-label>
         {name}:
         <calcite-slider
           disabled={!enabled}
@@ -99,7 +107,7 @@ class LayerFX extends Widget {
             el.removeEventListener("calciteSliderUpdate", oninput);
           }}
         />
-      </label>
+      </calcite-label>
     );
   };
 
@@ -126,8 +134,8 @@ class LayerFX extends Widget {
     const { enabled } = effect;
 
     return (
-      <label>
-        {this.messages[effect.id]}
+      <calcite-label layout="inline">
+        {this.messages.enabled}:
         <calcite-switch
           switched={enabled}
           afterCreate={(el: HTMLElement) => {
@@ -141,16 +149,28 @@ class LayerFX extends Widget {
             );
           }}
         />
-      </label>
+      </calcite-label>
     );
   };
 
   protected renderEffect = (effect: LayerEffect) => {
     return (
-      <fieldset disabled={!effect.enabled}>
-        <legend>{this.renderEffectEnabledLabel(effect)}</legend>
-        {this.renderEffectValues(effect)}
-      </fieldset>
+      <calcite-block-section
+        text={this.messages[effect.id]}
+        toggle-display="switch"
+        afterCreate={(el: HTMLElement) => {
+          el.addEventListener("calciteBlockSectionToggle", (event: CustomEvent) =>
+            this.updateEnabled(event, effect)
+          );
+        }}
+        afterRemoved={(el: HTMLElement) => {
+          el.removeEventListener("calciteBlockSectionToggle", (event: CustomEvent) =>
+            this.updateEnabled(event, effect)
+          );
+        }}
+      >
+        <div style="padding:1em;">{this.renderEffectValues(effect)}</div>
+      </calcite-block-section>
     );
   };
 
@@ -161,9 +181,8 @@ class LayerFX extends Widget {
   //--------------------------------------------------------------------------
 
   private updateEnabled = (event: CustomEvent, effect: LayerEffect) => {
-    console.log(event);
     const target = event.target as any;
-    effect.enabled = !!target.switched;
+    effect.enabled = !!target.open;
   };
 
   private updateValue = (event: CustomEvent, effect: LayerEffect, index: number) => {
