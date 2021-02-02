@@ -74,7 +74,7 @@ class LayerFX extends Widget {
           >
             Code
           </calcite-button>
-          {this._showCode ? <pre>{statements}</pre> : null}
+          {this._showCode && statements ? <pre>{statements}</pre> : null}
           {effects.map(this.renderEffect).toArray()}
         </calcite-block>
       </div>

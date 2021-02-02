@@ -1,3 +1,13 @@
 .layer-fx calcite-block {
   margin: 0;
 }
+.layer-fx pre {
+  font-size: 1em;
+  border: 2px solid grey;
+  width: 100%;
+  border-left: 8px solid green;
+  border-radius: 5px;
+  padding: 1em;
+  overflow: auto;
+  max-height: 200px;
+}
