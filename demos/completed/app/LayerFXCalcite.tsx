@@ -1,6 +1,6 @@
 import LayerFX = require("./LayerFX");
 import { tsx } from "esri/widgets/support/widget";
-import { property, subclass } from "esri/core/accessorSupport/decorators";
+import { subclass } from "esri/core/accessorSupport/decorators";
 import { CSS } from "./resources";
 import LayerEffect = require("./LayerEffect");
 
@@ -8,21 +8,12 @@ import LayerEffect = require("./LayerEffect");
 class LayerFXCalcite extends LayerFX {
   //--------------------------------------------------------------------------
   //
-  //  Variables
-  //
-  //--------------------------------------------------------------------------
-
-  @property()
-  private _showCode = false;
-
-  //--------------------------------------------------------------------------
-  //
   //  Public Methods
   //
   //--------------------------------------------------------------------------
 
   render() {
-    const { effects, state, statements } = this.viewModel;
+    const { effects, state } = this.viewModel;
 
     return (
       <div class={this.classes(CSS.root, CSS.esriWidget, CSS.esriWidgetPanel)}>
@@ -34,19 +25,8 @@ class LayerFXCalcite extends LayerFX {
           loading={state === "loading"}
           theme="dark"
         >
-          <div class="code-container">
-            <calcite-button
-              disabled={!statements}
-              color={this._showCode ? "dark" : "blue"}
-              scale="s"
-              floating
-              icon-start="code"
-              onclick={() => (this._showCode = !this._showCode)}
-            />
-            {this._showCode && statements ? <pre>{statements}</pre> : null}
-          </div>
-
           {effects.map(this.renderEffect).toArray()}
+          {this.renderCodeAccordion()}
         </calcite-block>
       </div>
     );
@@ -57,6 +37,18 @@ class LayerFXCalcite extends LayerFX {
   //  Protected Methods
   //
   //--------------------------------------------------------------------------
+
+  protected renderCodeAccordion = () => {
+    const { statements } = this.viewModel;
+
+    return (
+      <calcite-accordion>
+        <calcite-accordion-item item-title="Effect code" icon="code">
+          {statements ? <pre>{statements}</pre> : <p>No code to display.</p>}
+        </calcite-accordion-item>
+      </calcite-accordion>
+    );
+  };
 
   protected renderEffectSliderLabel = ({
     enabled,
