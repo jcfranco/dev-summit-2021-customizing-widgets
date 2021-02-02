@@ -53,7 +53,7 @@ class LayerFX extends Widget {
   //--------------------------------------------------------------------------
 
   render() {
-    const { effects, state } = this.viewModel;
+    const { effects, state, statements } = this.viewModel;
 
     return (
       <div class={this.classes(CSS.root, CSS.esriWidget, CSS.esriWidgetPanel)}>
@@ -65,11 +65,30 @@ class LayerFX extends Widget {
           loading={state === "loading"}
           theme="dark"
         >
+          <calcite-button
+            disabled={!statements}
+            scale="s"
+            round
+            icon-end="code"
+            onclick={() => (this._showCode = !this._showCode)}
+          >
+            Code
+          </calcite-button>
+          {this._showCode ? <pre>{statements}</pre> : null}
           {effects.map(this.renderEffect).toArray()}
         </calcite-block>
       </div>
     );
   }
+
+  //--------------------------------------------------------------------------
+  //
+  //  Variables
+  //
+  //--------------------------------------------------------------------------
+
+  @property()
+  private _showCode = false;
 
   //--------------------------------------------------------------------------
   //
