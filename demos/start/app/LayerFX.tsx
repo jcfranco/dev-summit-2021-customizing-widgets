@@ -58,6 +58,7 @@ class LayerFX extends Widget {
     return (
       <div class={this.classes(CSS.root, CSS.esriWidget, CSS.esriWidgetPanel)}>
         <h2>{this.messages.title}</h2>
+        <p>{this.messages.summary}</p>
         <div class={CSS.container}>{effects.map(this.renderEffect).toArray()}</div>
       </div>
     );
@@ -70,12 +71,14 @@ class LayerFX extends Widget {
   //--------------------------------------------------------------------------
 
   private renderEffectSliderLabel = ({
+    enabled,
     name,
     min,
     max,
     value,
     oninput
   }: {
+    enabled: boolean;
     value: number;
     min: number;
     max: number;
@@ -87,6 +90,7 @@ class LayerFX extends Widget {
         {name}:
         <input
           class={CSS.slider}
+          disabled={!enabled}
           type="range"
           min={min}
           max={max}
@@ -98,11 +102,12 @@ class LayerFX extends Widget {
   };
 
   protected renderEffectValue = (effect: LayerEffect, value: number, index: number) => {
-    const { valueTypes } = effect;
+    const { valueTypes, enabled } = effect;
     const valueType = valueTypes[index];
     const { name, min, max } = valueType;
 
     return this.renderEffectSliderLabel({
+      enabled,
       name: name || this.messages.value,
       min,
       max,
