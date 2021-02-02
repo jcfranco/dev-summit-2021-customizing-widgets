@@ -65,16 +65,18 @@ class LayerFX extends Widget {
           loading={state === "loading"}
           theme="dark"
         >
-          <calcite-button
-            disabled={!statements}
-            scale="s"
-            round
-            icon-end="code"
-            onclick={() => (this._showCode = !this._showCode)}
-          >
-            Code
-          </calcite-button>
-          {this._showCode && statements ? <pre>{statements}</pre> : null}
+          <div class="code-container">
+            <calcite-button
+              disabled={!statements}
+              color={this._showCode ? "dark" : "blue"}
+              scale="s"
+              floating
+              icon-start="code"
+              onclick={() => (this._showCode = !this._showCode)}
+            />
+            {this._showCode && statements ? <pre>{statements}</pre> : null}
+          </div>
+
           {effects.map(this.renderEffect).toArray()}
         </calcite-block>
       </div>
@@ -188,7 +190,7 @@ class LayerFX extends Widget {
           );
         }}
       >
-        <div style="padding:1em;">{this.renderEffectValues(effect)}</div>
+        <div class="block-content">{this.renderEffectValues(effect)}</div>
       </calcite-block-section>
     );
   };
