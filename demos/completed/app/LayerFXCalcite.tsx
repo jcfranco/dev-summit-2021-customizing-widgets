@@ -15,6 +15,7 @@ class LayerFXCalcite extends LayerFX {
   render() {
     const { effects, state } = this.viewModel;
 
+    // todo: drag and drop of block sections
     return (
       <div class={this.classes(CSS.root, CSS.esriWidget, CSS.esriWidgetPanel)}>
         <calcite-block
@@ -41,6 +42,7 @@ class LayerFXCalcite extends LayerFX {
   protected renderCodeAccordion = () => {
     const { statements } = this.viewModel;
 
+    // todo: messages added here
     return (
       <calcite-accordion>
         <calcite-accordion-item item-title="Effect code" icon="code">
@@ -65,6 +67,7 @@ class LayerFXCalcite extends LayerFX {
     name: string;
     oninput: (event: Event) => void;
   }) => {
+    // todo: cleanup afterCreate code with widgetUtils.addEventListener
     return (
       <calcite-label>
         {name}:
@@ -102,6 +105,7 @@ class LayerFXCalcite extends LayerFX {
   protected renderEffectEnabledLabel = (effect: LayerEffect) => {
     const { enabled } = effect;
 
+    // todo: cleanup afterCreate code with widgetUtils.addEventListener
     return (
       <calcite-label layout="inline">
         {this.messages.enabled}:
@@ -123,6 +127,7 @@ class LayerFXCalcite extends LayerFX {
   };
 
   protected renderEffect = (effect: LayerEffect) => {
+    // todo: cleanup afterCreate code with widgetUtils.addEventListener
     return (
       <calcite-block-section
         text={this.messages[effect.id]}
