@@ -21,9 +21,7 @@
 - Theming <!-- .element: class="fragment" data-fragment-index="1" -->
   - Changing styles: colors, sizing, font, etc.
 - Altering presentation of a widget <!-- .element: class="fragment" data-fragment-index="2" -->
-  - New view
-  - Recreating a view
-- Extending <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Extending
   - Overriding, adding functionality
 
 ---
@@ -31,8 +29,8 @@
 # Customization Approaches
 
 - Authoring a theme <!-- .element: class="fragment" data-fragment-index="1" -->
-- Recreating a view <!-- .element: class="fragment" data-fragment-index="2" -->
-- Extending a view <!-- .element: class="fragment" data-fragment-index="3" -->
+- Extending a view <!-- .element: class="fragment" data-fragment-index="2" -->
+- Adding functionality to a view <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -490,13 +488,13 @@ What have we learned about Widget Views?
 
 ---
 
-# Questions? 🤔 
+# Questions? 🤔
 
 > Where can I find the slides/source?
 
-[bit.ly/buildwidgetsds20](http://bit.ly/buildwidgetsds21) 
+[bit.ly/buildwidgetsds20](http://bit.ly/buildwidgetsds21)
 
-> Where can I submit a question? 
+> Where can I submit a question?
 
 [bit.ly/askjsapi](http://bit.ly/askjsapi)
 
