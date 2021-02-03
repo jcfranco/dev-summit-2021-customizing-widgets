@@ -17,3 +17,7 @@
   overflow: auto;
   max-height: 100px;
 }
+
+.layer-fx p {
+  margin-bottom: 0;
+}

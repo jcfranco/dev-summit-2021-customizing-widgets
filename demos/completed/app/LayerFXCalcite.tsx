@@ -44,7 +44,7 @@ class LayerFXCalcite extends LayerFX {
     return (
       <calcite-accordion>
         <calcite-accordion-item item-title="Effect code" icon="code">
-          {statements ? <pre>{statements}</pre> : <p>No code to display.</p>}
+          {statements ? <pre>{statements}</pre> : <p>Turn on an effect to see some code</p>}
         </calcite-accordion-item>
       </calcite-accordion>
     );
