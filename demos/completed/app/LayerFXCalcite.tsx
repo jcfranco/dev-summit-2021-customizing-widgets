@@ -1,8 +1,8 @@
-import LayerFX = require("./LayerFX");
+import LayerFX from "./LayerFX";
 import { tsx } from "esri/widgets/support/widget";
 import { subclass } from "esri/core/accessorSupport/decorators";
 import { CSS } from "./resources";
-import LayerEffect = require("./LayerEffect");
+import LayerEffect from "./LayerEffect";
 
 @subclass("esri.demo.LayerFX")
 class LayerFXCalcite extends LayerFX {
