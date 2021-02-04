@@ -492,7 +492,7 @@ What have we learned about Widget Views?
 
 > Where can I find the slides/source?
 
-[bit.ly/buildwidgetsds20](http://bit.ly/buildwidgetsds21)
+[bit.ly/buildwidgetsds21](http://bit.ly/buildwidgetsds21)
 
 > Where can I submit a question?
 
