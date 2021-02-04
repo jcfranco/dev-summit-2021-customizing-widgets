@@ -15,6 +15,5 @@
     "moduleResolution": "node",
     "noEmitHelpers": true
   },
-  "include": ["./demos", "typings"],
-  "exclude": ["node_modules", "**/*-final.tsx", "**/*-final.ts"]
+  "include": ["./demos", "typings", "node_modules/@esri/calcite-components/dist/types/components.d.ts"]
 }

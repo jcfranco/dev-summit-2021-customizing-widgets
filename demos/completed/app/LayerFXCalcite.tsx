@@ -3,9 +3,28 @@ import { tsx } from "esri/widgets/support/widget";
 import { subclass } from "esri/core/accessorSupport/decorators";
 import { CSS } from "./resources";
 import LayerEffect from "./LayerEffect";
+import Sortable from "sortablejs";
 
 @subclass("esri.demo.LayerFX")
 class LayerFXCalcite extends LayerFX {
+  //--------------------------------------------------------------------------
+  //
+  //  Lifecycle
+  //
+  //--------------------------------------------------------------------------
+
+  destroy() {
+    this._sortable?.destroy();
+  }
+
+  //--------------------------------------------------------------------------
+  //
+  //  Variables
+  //
+  //--------------------------------------------------------------------------
+
+  private _sortable: Sortable;
+
   //--------------------------------------------------------------------------
   //
   //  Public Methods
@@ -15,10 +34,10 @@ class LayerFXCalcite extends LayerFX {
   render() {
     const { effects, state } = this.viewModel;
 
-    // todo: drag and drop of block sections
     return (
       <div class={this.classes(CSS.root, CSS.esriWidget, CSS.esriWidgetPanel)}>
         <calcite-block
+          afterCreate={this.initSortable}
           open
           heading={this.messages.title}
           summary={this.messages.summary}
@@ -42,7 +61,6 @@ class LayerFXCalcite extends LayerFX {
   protected renderCodeAccordion = () => {
     const { statements } = this.viewModel;
 
-    // todo: messages added here
     return (
       <calcite-accordion>
         <calcite-accordion-item item-title="Effect code" icon="code">
@@ -102,46 +120,17 @@ class LayerFXCalcite extends LayerFX {
     });
   };
 
-  protected renderEffectEnabledLabel = (effect: LayerEffect) => {
-    const { enabled } = effect;
-
-    // todo: cleanup afterCreate code with widgetUtils.addEventListener
-    return (
-      <calcite-label layout="inline">
-        {this.messages.enabled}:
-        <calcite-switch
-          switched={enabled}
-          afterCreate={(el: HTMLElement) => {
-            el.addEventListener("calciteSwitchChange", (event: CustomEvent) =>
-              this.updateEnabledCustom(event, effect)
-            );
-          }}
-          afterRemoved={(el: HTMLElement) => {
-            el.removeEventListener("calciteSwitchChange", (event: CustomEvent) =>
-              this.updateEnabledCustom(event, effect)
-            );
-          }}
-        />
-      </calcite-label>
-    );
-  };
-
   protected renderEffect = (effect: LayerEffect) => {
     // todo: cleanup afterCreate code with widgetUtils.addEventListener
     return (
       <calcite-block-section
         text={this.messages[effect.id]}
+        data-effect={effect}
+        key={effect.id}
+        open={effect.enabled}
         toggle-display="switch"
-        afterCreate={(el: HTMLElement) => {
-          el.addEventListener("calciteBlockSectionToggle", (event: CustomEvent) =>
-            this.updateEnabledCustom(event, effect)
-          );
-        }}
-        afterRemoved={(el: HTMLElement) => {
-          el.removeEventListener("calciteBlockSectionToggle", (event: CustomEvent) =>
-            this.updateEnabledCustom(event, effect)
-          );
-        }}
+        afterCreate={(el: HTMLElement) => el.addEventListener("calciteBlockSectionToggle", this.updateEnabledCustom)}
+        afterRemoved={(el: HTMLElement) => el.removeEventListener("calciteBlockSectionToggle", this.updateEnabledCustom)}
       >
         <div class="block-content">{this.renderEffectValues(effect)}</div>
       </calcite-block-section>
@@ -154,15 +143,27 @@ class LayerFXCalcite extends LayerFX {
   //
   //--------------------------------------------------------------------------
 
-  private updateEnabledCustom = (event: CustomEvent, effect: LayerEffect) => {
-    const target = event.target as any;
+  private initSortable = (el: HTMLElement) => {
+    if (!this._sortable) {
+      this._sortable = new Sortable(el, {
+        draggable: `calcite-block-section`,
+        onEnd: (event) => {
+          this.viewModel.effects.reorder(event.item["data-effect"], event.newIndex);
+        }
+      });
+    }
+  }
+
+  private updateEnabledCustom = (event: CustomEvent) => {
+    const target = event.currentTarget as HTMLCalciteBlockSectionElement;
+    const effect: LayerEffect = target["data-effect"];
     effect.enabled = !!target.open;
   };
 
   private updateValueCustom = (event: CustomEvent, effect: LayerEffect, index: number) => {
-    const target = event.target as any;
+    const target = event.currentTarget as HTMLCalciteSliderElement;
     const value = effect.values.slice();
-    value[index] = parseInt(target.value, 10);
+    value[index] = target.value;
     effect.values = value;
   };
 }

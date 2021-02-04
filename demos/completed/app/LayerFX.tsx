@@ -152,12 +152,12 @@ class LayerFX extends Widget {
   //--------------------------------------------------------------------------
 
   private updateEnabled = (event: Event, effect: LayerEffect) => {
-    const target = event.target as HTMLInputElement;
+    const target = event.currentTarget as HTMLInputElement;
     effect.enabled = !!target.checked;
   };
 
   private updateValue = (event: Event, effect: LayerEffect, index: number) => {
-    const target = event.target as HTMLInputElement;
+    const target = event.currentTarget as HTMLInputElement;
     const value = effect.values.slice();
     value[index] = target.valueAsNumber;
     effect.values = value;
