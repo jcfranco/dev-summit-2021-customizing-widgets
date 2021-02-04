@@ -480,11 +480,11 @@ What have we learned about Widget Views?
 
 ## You might also be interested in...
 
-- ArcGIS API for JavaScript: Getting Started with Web Development
-- ArcGIS API for JavaScript: Using TypeScript
-- ArcGIS API for JavaScript: Tips and Tricks for Developing and Debugging Apps
-- Building Light-Weight Map Authoring Web Apps
 - ArcGIS API for JavaScript: Building Your Own Widget
+- Esri Design System: Build compelling web apps faster using the new web component library
+- ArcGIS API for JavaScript: Getting Started with Web Development
+- ArcGIS API for JavaScript: Programming Patterns and API Fundamentals
+- Accessible Web Mapping Apps: ARIA, WCAG and 508 Compliance
 
 ---
 
