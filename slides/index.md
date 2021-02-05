@@ -20,17 +20,17 @@
 
 - Theming <!-- .element: class="fragment" data-fragment-index="1" -->
   - Changing styles: colors, sizing, font, etc.
-- Altering presentation of a widget <!-- .element: class="fragment" data-fragment-index="2" -->
-  - Extending
-  - Overriding, adding functionality
+- Extending and altering presentation of a widget <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Altering presentation
+  - Adding functionality
 
 ---
 
 # Customization Approaches
 
 - Authoring a theme <!-- .element: class="fragment" data-fragment-index="1" -->
-- Extending a view <!-- .element: class="fragment" data-fragment-index="2" -->
-- Adding functionality to a view <!-- .element: class="fragment" data-fragment-index="3" -->
+- Extending: Altering a view <!-- .element: class="fragment" data-fragment-index="2" -->
+- Extending: Adding functionality to a view <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -238,7 +238,7 @@ $button-color--hover: darken($button-color, 10%) !default;
 
 # Part I: Let's make a theme
 
-<img src="./img/custom-theme.png" height=400 />
+<!-- <img src="./img/custom-theme.png" /> -->
 
 ---
 
@@ -352,38 +352,8 @@ Widgets are composed of Views & ViewModels
 
 API Exploration
 
-- [ScaleRangeSlider Doc](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html)
-- [ScaleRangeSlider Demo](https://codepen.io/jcfranco-the-scripter/pen/GRJvXPZ?editors=1001)
-
----
-
-# Part II: Recreating a view
-
-Custom ScaleRangeSlider
-
-[![Custom ScaleRangeSlider](./img/custom-scalerangeslider.png)](../demos/custom-scalerangeslider-complete/)
-
----
-
-# Part II: CustomScaleRangeSlider Interface
-
-```ts
-interface CustomScaleRangeSlider {
-  layer: Layer; // aliased
-  rangeType: "to" | "from";
-  region: string; // will use to get thumbnails
-  view: MapView | SceneView; // aliased
-  viewModel: ScaleRangeSliderViewModel; // handling logic!
-}
-```
-
----
-
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover" -->
-
-Recreating a view
-
-[Demo Start](../demos/custom-scalerangeslider-start/) | [Demo Steps](../demos/custom-scalerangeslider-start/STEPS.md) | [ScaleRangeSlider Doc](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html)
+- [BasemapToggle Doc](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html)
+- [BasemapToggle Demo](https://developers.arcgis.com/javascript/latest/sample-code/intro-widgets/)
 
 ---
 
@@ -393,7 +363,8 @@ What have we learned about Widget Views?
 
 - Face of the widget
 - Present ViewModel logic
-- ViewModel separation allows framework integration or custom views
+- ViewModel separation
+  - Allows framework integration/custom views
 - Downloadable on API docs
 
 <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -405,18 +376,7 @@ What have we learned about Widget Views?
 
 ---
 
-<!-- Presenter: Franco -->
-
-<!-- NEXT PART  B -->
-<h1>Part III</h1>
-
-<h2>Extending a View</h2>
-
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
-
----
-
-# Part III: Extending
+# Part III: Extending a View
 
 - Why? <!-- .element: class="fragment" data-fragment-index="1" -->
   - Reusable <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -427,9 +387,83 @@ What have we learned about Widget Views?
 
 ---
 
+# Part III: Lets extend a View
+
+- View custom LayerFX widget
+- Extend the LayerFX widget view
+- Alter the presentation of the widget
+  - Use Esri's design system web components
+
+---
+
+# Part III: Background
+
+Inspired by [Intro to layer effect](https://developers.arcgis.com/javascript/latest/sample-code/intro-effect-layer/) sample
+
+<a target="_blank" href="https://developers.arcgis.com/javascript/latest/sample-code/intro-effect-layer/"><img src="img/layer-effect-sample.png" /></a>
+
+---
+
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover" -->
+
+# View LayerFX widget
+
+[Demo Start](../demos/start/)
+
+<a target="_blank" href="../demos/start/"><img src="img/LayerFX.png" height="400" /></a>
+
+---
+
+# Part III: LayerFX Interface
+
+```ts
+interface LayerFX extends Accessor {
+  layer: Layer;
+  readonly effects: Collection<LayerEffect>;
+  readonly statements: string;
+}
+
+interface LayerEffect {
+  enabled: boolean;
+  id: "bloom" | "blur" | ... | "sepia";
+  values: number[];
+  readonly valueTypes: { unit: string; ... }[];
+  readonly statement: string;
+}
+```
+
+---
+
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover" -->
+
+# Extend LayerFX widget
+
+Using Esri's design system web components
+
+[Demo Start](../demos/start/) | [Demo Steps](../demos/start/STEPS.md) | [Components Doc](TODO)
+
+<img src="img/LayerFXCalcite.png" height="400" />
+
+---
+
+<!-- Presenter: Franco -->
+
+<!-- NEXT PART  B -->
+<h1>Part IV</h1>
+
+<h2>Adding functionality to a view</h2>
+
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
+
+---
+
+# Part IV: Adding Functionality to a view
+
+---
+
 <!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover"  -->
 
-# Part III: Extending a View
+# Part IV: Adding Functionality to a view
 
 **CustomScaleRangeSlider (revisited)**
 
@@ -437,11 +471,11 @@ What have we learned about Widget Views?
 [Demo](../demos/custom-scalerangeslider-extended-start/) |
 [Steps](../demos/custom-scalerangeslider-extended-start/STEPS.md)
 
-<img src="./img/custom-scalerangeslider-extended.png" height=400 />
+<!-- <img src="./img/custom-scalerangeslider-extended.png" /> -->
 
 ---
 
-# Part III: Extending a View Recap
+# Part IV: Adding Functionality to a view
 
 - Reusable <!-- .element: class="fragment" data-fragment-index="1" -->
   - View/ViewModel <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -454,7 +488,7 @@ What have we learned about Widget Views?
 ---
 
 <!-- NEXT PART A -->
-<h1>End Part III</h1>
+<h1>End Part IV</h1>
 
 <!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
@@ -463,8 +497,9 @@ What have we learned about Widget Views?
 # Conclusion
 
 - Authored a theme <!-- .element: class="fragment" data-fragment-index="1" -->
-- Recreated a view <!-- .element: class="fragment" data-fragment-index="2" -->
-- Extended a view <!-- .element: class="fragment" data-fragment-index="3" -->
+- Extended a view <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Customized presentation <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Added functionality <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
