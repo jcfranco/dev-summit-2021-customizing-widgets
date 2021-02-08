@@ -414,9 +414,9 @@ Inspired by [Intro to layer effect](https://developers.arcgis.com/javascript/lat
 
 ---
 
-# LayerFX widget: Building
+# ArcGIS API for JavaScript:<br /> Building Your Own Widget
 
-- ArcGIS API for JavaScript: Building Your Own Widget
+- How the LayerFX widget was built
 - Thursday 8 April 2021 @ 10:15 a.m.
 
 ---
@@ -441,11 +441,18 @@ interface LayerEffect {
 
 ---
 
+# Customize LayerFX widget
+
+- Using [Esri's design system](TODO)
+  - Web components
+  - Custom, reusable, encapsulated HTML tags
+  - Example: `<calcite-button />`
+
+---
+
 <!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover" -->
 
 # Extend LayerFX widget
-
-Using Esri's design system web components
 
 [Demo Start](../demos/start/) | [Demo Steps](../demos/start/STEPS.md) | [Components Doc](TODO)
 
