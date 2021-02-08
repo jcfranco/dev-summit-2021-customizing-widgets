@@ -414,6 +414,13 @@ Inspired by [Intro to layer effect](https://developers.arcgis.com/javascript/lat
 
 ---
 
+# LayerFX widget: Building
+
+- ArcGIS API for JavaScript: Building Your Own Widget
+- Thursday 8 April 2021 @ 10:15 a.m.
+
+---
+
 # Part III: LayerFX Interface
 
 ```ts
