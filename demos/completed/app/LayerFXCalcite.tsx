@@ -85,7 +85,6 @@ class LayerFXCalcite extends LayerFX {
     name: string;
     oninput: (event: Event) => void;
   }) => {
-    // todo: cleanup afterCreate code with widgetUtils.addEventListener
     return (
       <calcite-label>
         {name}:
@@ -121,7 +120,6 @@ class LayerFXCalcite extends LayerFX {
   };
 
   protected renderEffect = (effect: LayerEffect) => {
-    // todo: cleanup afterCreate code with widgetUtils.addEventListener
     return (
       <calcite-block-section
         text={this.messages[effect.id]}
@@ -129,8 +127,12 @@ class LayerFXCalcite extends LayerFX {
         key={effect.id}
         open={effect.enabled}
         toggle-display="switch"
-        afterCreate={(el: HTMLElement) => el.addEventListener("calciteBlockSectionToggle", this.updateEnabledCustom)}
-        afterRemoved={(el: HTMLElement) => el.removeEventListener("calciteBlockSectionToggle", this.updateEnabledCustom)}
+        afterCreate={(el: HTMLElement) =>
+          el.addEventListener("calciteBlockSectionToggle", this.updateEnabledCustom)
+        }
+        afterRemoved={(el: HTMLElement) =>
+          el.removeEventListener("calciteBlockSectionToggle", this.updateEnabledCustom)
+        }
       >
         <div class="block-content">{this.renderEffectValues(effect)}</div>
       </calcite-block-section>
@@ -152,7 +154,7 @@ class LayerFXCalcite extends LayerFX {
         }
       });
     }
-  }
+  };
 
   private updateEnabledCustom = (event: CustomEvent) => {
     const target = event.currentTarget as HTMLCalciteBlockSectionElement;

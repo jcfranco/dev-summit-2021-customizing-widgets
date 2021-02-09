@@ -460,6 +460,15 @@ interface LayerEffect {
 
 ---
 
+# Part III: Extendint Recap
+
+- Extended an existing widget view
+- Replaced render methods
+- Altered presentation using Esri's design system components
+- Updated private methods where necessary
+
+---
+
 <!-- Presenter: Franco -->
 
 <!-- NEXT PART  B -->
