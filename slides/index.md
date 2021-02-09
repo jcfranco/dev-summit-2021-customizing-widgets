@@ -395,7 +395,7 @@ What have we learned about Widget Views?
 
 ---
 
-# [Esri's design system](TODO)
+# [Esri's design system](https://github.com/Esri/calcite-components)
 
 - Design patterns and practices
 - Web components
@@ -430,13 +430,6 @@ Inspired by [Intro to layer effect](https://developers.arcgis.com/javascript/lat
 
 ---
 
-# ArcGIS API for JavaScript:<br /> Building Your Own Widget
-
-- How the LayerFX widget was built
-- Thursday 8 April 2021 @ 10:15 a.m.
-
----
-
 # Part III: LayerFX Interface
 
 ```ts
@@ -457,11 +450,18 @@ interface LayerEffect {
 
 ---
 
+# ArcGIS API for JavaScript:<br /> Building Your Own Widget
+
+Thursday 8 April 2021 @ 10:15 a.m.
+
+---
+
 <!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover" -->
 
 # Extend LayerFX widget
 
-[Demo Start](../demos/start/) | [Demo Steps](../demos/start/STEPS.md) | [Components Doc](TODO)
+- [Demo Start](../demos/start/)
+- [Demo Steps](../demos/start/STEPS.md)
 
 <img src="img/LayerFXCalcite.png" height="400" />
 
