@@ -16,21 +16,13 @@
 
 ---
 
-# Customizing Widgets
-
-- Theming <!-- .element: class="fragment" data-fragment-index="1" -->
-  - Changing styles: colors, sizing, font, etc.
-- Extending and altering presentation of a widget <!-- .element: class="fragment" data-fragment-index="2" -->
-  - Altering presentation
-  - Adding functionality
-
----
-
 # Customization Approaches
 
 - Authoring a theme <!-- .element: class="fragment" data-fragment-index="1" -->
-- Extending: Altering a view <!-- .element: class="fragment" data-fragment-index="2" -->
-- Extending: Adding functionality to a view <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Changing styles: colors, sizing, font, etc.
+- Extending a view <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Altering presentation
+  - Adding functionality
 
 ---
 
