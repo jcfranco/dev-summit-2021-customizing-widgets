@@ -463,7 +463,7 @@ Thursday 8 April 2021 @ 10:15 a.m.
 - [Demo Start](../demos/start/)
 - [Demo Steps](../demos/start/STEPS.md)
 
-<img src="img/LayerFXCalcite.png" height="400" />
+<div><img src="img/LayerFXCalcite.png" height="400" /></div>
 
 ---
 

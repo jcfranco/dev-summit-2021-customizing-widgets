@@ -4,9 +4,24 @@ Steps to create a custom widget!
 
 ## Explore the file structure
 
+- Demos/
+  - Start/
+    - app/
+      - css/
+        - LayerFx.css
+        - main.css
+      - LayerFX.tsx
+      - LayerFXCalcite.tsx
+      - main.ts
+    - index.html
+
 ## Preview the index page
 
+Navigate to `dev-summit-2021-customizing-widgets/demos/start/`
+
 ## Get calcite
+
+[Calcite Readme](https://github.com/Esri/calcite-components/blob/master/readme.md)
 
 ## Add calcite
 
@@ -60,6 +75,10 @@ tsc -w
 ```
 
 ## Start building LayerFXCalcite
+
+### Look at existing LayerFX widget rendering
+
+Explore the existing LayerFX widget and it's render methods
 
 ### Override public render method
 
@@ -211,5 +230,7 @@ protected renderEffectSliderLabel = ({
 ```
 
 ## Complete
+
+View the updated widget and test it out!
 
 Lets go back to slides to review.
