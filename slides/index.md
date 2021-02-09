@@ -353,7 +353,6 @@ Widgets are composed of Views & ViewModels
 API Exploration
 
 - [BasemapToggle Doc](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html)
-- [BasemapToggle Demo](https://developers.arcgis.com/javascript/latest/sample-code/intro-widgets/)
 
 ---
 
@@ -391,8 +390,25 @@ What have we learned about Widget Views?
 
 - View custom LayerFX widget
 - Extend the LayerFX widget view
-- Alter the presentation of the widget
   - Use Esri's design system web components
+  - Alter the presentation of the widget
+
+---
+
+# [Esri's design system](TODO)
+
+- Design patterns and practices
+- Web components
+  - Custom, reusable, encapsulated HTML tags
+  - Quickly build Esri branded, lightweight, and accessible web apps
+
+[CalciteButton](https://esri.github.io/calcite-components/?path=/story/components-button--simple)
+
+```html
+<calcite-button>
+  My Button!
+</calcite-button>
+```
 
 ---
 
@@ -438,15 +454,6 @@ interface LayerEffect {
   readonly statement: string;
 }
 ```
-
----
-
-# Customize LayerFX widget
-
-- Using [Esri's design system](TODO)
-  - Web components
-  - Custom, reusable, encapsulated HTML tags
-  - Example: `<calcite-button />`
 
 ---
 
