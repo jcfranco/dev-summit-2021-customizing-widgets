@@ -395,24 +395,24 @@ What have we learned about Widget Views?
 
 ---
 
-# [Esri's design system](https://github.com/Esri/calcite-components)
+# [Esri's design system\*](https://github.com/Esri/calcite-components)
 
-- Design patterns and practices
-- Web components
+<span style="color:red;">\*Evolved from Esri's calcite style and currently in beta</span>
+
+- Create beautiful, consistent apps faster​
+- Web components: `<custom-elements/>`
   - Custom, reusable, encapsulated HTML tags
   - Quickly build Esri branded, lightweight, and accessible web apps
 
 [CalciteButton](https://esri.github.io/calcite-components/?path=/story/components-button--simple)
 
 ```html
-<calcite-button>
-  My Button!
-</calcite-button>
+<calcite-button>My Button!</calcite-button>
 ```
 
 ---
 
-# Part III: Background
+# Part III: LayerFX Widget
 
 Inspired by [Intro to layer effect](https://developers.arcgis.com/javascript/latest/sample-code/intro-effect-layer/) sample
 
