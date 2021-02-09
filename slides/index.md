@@ -18,9 +18,9 @@
 
 # Customization Approaches
 
-- Authoring a theme <!-- .element: class="fragment" data-fragment-index="1" -->
+- Authoring a theme (Sass)<!-- .element: class="fragment" data-fragment-index="1" -->
   - Changing styles: colors, sizing, font, etc.
-- Extending a view <!-- .element: class="fragment" data-fragment-index="2" -->
+- Extending a view (Typescript)<!-- .element: class="fragment" data-fragment-index="2" -->
   - Altering presentation
   - Adding functionality
 
@@ -301,7 +301,8 @@ Widgets are composed of Views & ViewModels
 # Part II: Views
 
 - Presentation of the Widget
-- Uses ViewModel APIs to render the UI
+  - DOM structure
+- Use ViewModel APIs to render the UI
 - View-specific logic resides here
 - Extend `esri/widgets/Widget`
 
@@ -311,7 +312,7 @@ Widgets are composed of Views & ViewModels
 
 # Part II: Widget Class
 
-`esri/widgets/Widget`
+[`esri/widgets/Widget`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)
 
 - Provides lifecycle
 - API consistency
@@ -344,7 +345,7 @@ Widgets are composed of Views & ViewModels
 
 API Exploration
 
-- [BasemapToggle Doc](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html)
+[BasemapToggle Doc](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html)
 
 ---
 
@@ -392,7 +393,7 @@ What have we learned about Widget Views?
 <span style="color:red;">\*Evolved from Esri's calcite style and currently in beta</span>
 
 - Create beautiful, consistent apps faster​
-- Web components: `<custom-elements/>`
+- Web components:
   - Custom, reusable, encapsulated HTML tags
   - Quickly build Esri branded, lightweight, and accessible web apps
 
@@ -459,12 +460,18 @@ Thursday 8 April 2021 @ 10:15 a.m.
 
 ---
 
-# Part III: Extendint Recap
+# Part III: Extending Views Recap
 
 - Extended an existing widget view
 - Replaced render methods
-- Altered presentation using Esri's design system components
+- Altered presentation using Esri's design system: components
 - Updated private methods where necessary
+
+---
+
+<h1>End Part III</h1>
+
+<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
 ---
 
