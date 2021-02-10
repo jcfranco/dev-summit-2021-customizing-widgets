@@ -1,7 +1,9 @@
 .reveal pre code {
-  margin: 1em;
+  padding: 1rem;
 }
 
 .reveal pre {
-  text-align:center;
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
 }
