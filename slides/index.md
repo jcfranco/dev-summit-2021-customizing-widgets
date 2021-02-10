@@ -255,13 +255,6 @@ $button-color--hover: darken($button-color, 10%) !default;
 
 ---
 
-<!-- NEXT PART  A -->
-<h1>End Part I</h1>
-
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
-
----
-
 <!-- NEXT PART  B -->
 <h1>Part II</h1>
 
@@ -360,11 +353,6 @@ What have we learned about Widget Views?
 - Downloadable on API docs
 
 <!-- .element: class="fragment" data-fragment-index="1" -->
-
----
-
-<!-- NEXT PART  A -->
-<h1>End Part II</h1>
 
 ---
 
@@ -469,12 +457,6 @@ Thursday 8 April 2021 @ 10:15 a.m.
 
 ---
 
-<h1>End Part III</h1>
-
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
-
----
-
 <!-- Presenter: Franco -->
 
 <!-- NEXT PART  B -->
@@ -513,13 +495,6 @@ Thursday 8 April 2021 @ 10:15 a.m.
 - Extended existing widget <!-- .element: class="fragment" data-fragment-index="3" -->
   - Lifecycle <!-- .element: class="fragment" data-fragment-index="3" -->
   - TypeScript <!-- .element: class="fragment" data-fragment-index="3" -->
-
----
-
-<!-- NEXT PART A -->
-<h1>End Part IV</h1>
-
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
 
 ---
 
