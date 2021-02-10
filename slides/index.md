@@ -459,7 +459,7 @@ Thursday 8 April 2021 @ 10:15 a.m.
 <!-- Presenter: Franco -->
 <!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover"  -->
 
-# Part III: Lets extend a View (behavior)
+# Part III: Let's extend a View (behavior)
 
 - Extend the LayerFX widget view
   - Add a preview section to see the applied effects
