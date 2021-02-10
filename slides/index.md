@@ -464,6 +464,7 @@ Thursday 8 April 2021 @ 10:15 a.m.
 # Part III: Lets extend a View (behavior)
 
 - Extend the LayerFX widget view
+  - Add a preview section to see the applied effects 
   - Use [`Sortable.js`](https://sortablejs.github.io/Sortable/) to allow reordering effects 
 
 ---
@@ -472,6 +473,7 @@ Thursday 8 April 2021 @ 10:15 a.m.
 
 - Extended an existing widget view
 - Updated render methods
+- Added a code preview block
 - Used `Sortable.js` to allow custom drag behavior
 
 ---
