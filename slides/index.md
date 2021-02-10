@@ -3,9 +3,9 @@
 
 # ArcGIS API for JavaScript: Customizing Widgets
 
-### Matt Driscoll – [@driskull](https://twitter.com/driskull)
-
 ### JC Franco – [@arfncode](https://twitter.com/arfncode)
+
+### Matt Driscoll – [@driskull](https://twitter.com/driskull)
 
 ---
 
