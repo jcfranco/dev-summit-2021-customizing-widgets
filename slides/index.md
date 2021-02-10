@@ -20,7 +20,7 @@
 
 - Authoring a theme (Sass)<!-- .element: class="fragment" data-fragment-index="1" -->
   - Changing styles: colors, sizing, font, etc.
-- Extending a view (Typescript)<!-- .element: class="fragment" data-fragment-index="2" -->
+- Extending a view (TypeScript)<!-- .element: class="fragment" data-fragment-index="2" -->
   - Altering presentation
   - Adding functionality
 
@@ -99,34 +99,43 @@ We use
 
 # Theming Steps
 
-1.  Get our theme utility.
-1.  Use the utility.
-1.  Customize your theme.
-1.  Host your CSS file.
+1.  Install the [`@arcgis/cli`](https://www.npmjs.com/package/@arcgis/cli) NPM package
+1.  Use `styles` commands to  
+    1.  Create
+    1.  Preview
+    1.  Customize
+1.  Host and reference your custom theme.
 
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
+
 # Step 1
 
-Clone the repo.<br/>
-<a href="https://github.com/jcfranco/jsapi-styles" target="_blank">https://github.com/jcfranco/jsapi-styles</a>
+Install [`@arcgis/cli`](https://www.npmjs.com/package/@arcgis/cli)
+
 
 ```
-git clone https://github.com/jcfranco/jsapi-styles.git
+npm install -g @arcgis/cli
 ```
+<!-- .element: style="text-align: center" -->
 
 ---
 
 # Step 2
 
-`npm install`
+Create a theme
 
-- Installs the necessary bits.
-- Creates a sample theme directory.
-- Compiles the CSS from the SCSS.
-- Spins up a preview in your default browser.
+```
+arcgis-cli styles create <theme> 
+```
+
+Run a preview
+
+```
+arcgis-cli styles preview <theme>
+```
 
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -134,29 +143,18 @@ git clone https://github.com/jcfranco/jsapi-styles.git
 
 # Step 3
 
-Edit your theme.<br/>
-`sass/my-theme/main.scss`
-
-<div>
-
-<!-- intentional space after <div> above (for markdown rendering) -->
-
-Optionally, edit your app.<br/>
-`preview/index.html`
-
-</div><!-- .element: class="fragment" data-fragment-index="1" -->
+Edit your theme<br/>
+`<theme>/main.scss`
 
 ---
 
 # Step 4
 
-Host your stylesheet and any relevant assets.
-
-Link your stylesheet in your app.
+Eject and host/reference your custom theme. 
 
 ```html
 <!-- In your app: -->
-<link href="path/to/your/theme/main.css" rel="stylesheet" />
+<link href="path/to/your/<theme>/main.css" rel="stylesheet" />
 ```
 
 ---
@@ -192,8 +190,8 @@ $background-color: #fff !default;
 Any value assignment overrides the `!default` value.
 
 ```scss
-// Inside sass/my-theme/main.scss
-$background-color: #1e0707;
+// Inside my-theme/main.scss
+$background-color: #116EBF;
 ```
 
 But wait...there's more!<!-- .element: class="fragment" data-fragment-index="1" -->
@@ -205,10 +203,10 @@ But wait...there's more!<!-- .element: class="fragment" data-fragment-index="1" 
 Override the core color variables...
 
 ```scss
-$font-color: #3a5fe5;
-$interactive-font-color: #ff1515;
-$background-color: #1e0707;
-$button-color: #8070cc;
+$font-color: #0442BF;
+$interactive-font-color: #F20530;
+$background-color: #116EBF;
+$button-color: #F2B705;
 ```
 
 ...then magic!<!-- .element: class="fragment" data-fragment-index="1" -->
@@ -246,12 +244,12 @@ $button-color--hover: darken($button-color, 10%) !default;
 
 # Part I: Theming Recap
 
-- Use the utility for easy theming.
-- Theme structure
+- Used [`@arcgis/cli`](https://www.npmjs.com/package/@arcgis/cli) for easy theming
+- Saw theme structure
   - Color
   - Size
   - Typography
-- Use the core and override values.
+- Used the core and override values.
 
 ---
 

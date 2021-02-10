@@ -1,26 +1,7 @@
-.reveal section img {
-  border: none;
-  background: none;
-  box-shadow: none;
+.reveal pre code {
+  margin: 1em;
 }
 
-.reveal code {
-  color: orange;
-  font-style: italic;
-}
-
-.reveal h1 {
-  font-size: 2.2em;
-}
-
-.reveal h2 {
-  font-size: 1.8em;
-}
-
-.reveal h3 {
-  font-size: 1.4em;
-}
-
-.reveal h4 {
-  font-size: 1.2em;
+.reveal pre {
+  text-align:center;
 }
