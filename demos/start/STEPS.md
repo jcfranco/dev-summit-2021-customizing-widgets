@@ -115,6 +115,10 @@ render() {
 import { CSS } from "./resources";
 ```
 
+### Preview page
+
+Take a look at the app now.
+
 ### Replace the fieldsets with CalciteBlockItems
 
 ```tsx
@@ -160,6 +164,10 @@ private updateEnabledCustom = (event: CustomEvent) => {
   effect.enabled = !!target.open;
 };
 ```
+
+### Preview page
+
+Take a look at the app now.
 
 ### Replace native sliders with CalciteSlider
 
