@@ -1,5 +1,5 @@
 <!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-1.png" data-background-size="cover" -->
-<!-- Presenter: Matt -->
+<!-- Presenter: Franco -->
 
 # ArcGIS API for JavaScript: Customizing Widgets
 
@@ -316,19 +316,20 @@ Widgets are composed of Views & ViewModels
 
 # Part II: Widget Lifecycle
 
-- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> `constructor`
-- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> `postInitialize`
-- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> `render`
-- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> `destroy`
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> `constructor()`
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> `postInitialize()`
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> `render()`
+  - &shy;<!-- .element: class="fragment" data-fragment-index="4" --> `when()` - after first render
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> `destroy()`
 
 ---
 
-# Part II: `render`
+# Part II: `render()`
 
 - Defines UI
-- Reacts to state
-- Uses JSX
-- VDOM
+- Reacts to state changes
+- Uses JSX (VDOM)
+- Re-renders on prop updates
 
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -367,7 +368,7 @@ What have we learned about Widget Views?
 
 ---
 
-# Part III: Lets extend a View
+# Part III: Lets extend a View (presentation)
 
 - View custom LayerFX widget
 - Extend the LayerFX widget view
@@ -448,7 +449,7 @@ Thursday 8 April 2021 @ 10:15 a.m.
 
 ---
 
-# Part III: Extending Views Recap
+# Part III: Extending View (presentation) Recap
 
 - Extended an existing widget view
 - Replaced render methods
@@ -458,43 +459,20 @@ Thursday 8 April 2021 @ 10:15 a.m.
 ---
 
 <!-- Presenter: Franco -->
-
-<!-- NEXT PART  B -->
-<h1>Part IV</h1>
-
-<h2>Adding functionality to a view</h2>
-
-<!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-3.png" data-background-size="cover"  -->
-
----
-
-# Part IV: Adding Functionality to a view
-
----
-
 <!-- .slide: data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-4.png" data-background-size="cover"  -->
 
-# Part IV: Adding Functionality to a view
+# Part III: Lets extend a View (behavior)
 
-**CustomScaleRangeSlider (revisited)**
-
-[API Reference](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) |
-[Demo](../demos/custom-scalerangeslider-extended-start/) |
-[Steps](../demos/custom-scalerangeslider-extended-start/STEPS.md)
-
-<!-- <img src="./img/custom-scalerangeslider-extended.png" /> -->
+- Extend the LayerFX widget view
+  - Use [`Sortable.js`](https://sortablejs.github.io/Sortable/) to allow reordering effects 
 
 ---
 
-# Part IV: Adding Functionality to a view
+# Part III: Extending View (behavior) Recap
 
-- Reusable <!-- .element: class="fragment" data-fragment-index="1" -->
-  - View/ViewModel <!-- .element: class="fragment" data-fragment-index="1" -->
-- Same ecosystem <!-- .element: class="fragment" data-fragment-index="2" -->
-  - No extra libraries <!-- .element: class="fragment" data-fragment-index="2" -->
-- Extended existing widget <!-- .element: class="fragment" data-fragment-index="3" -->
-  - Lifecycle <!-- .element: class="fragment" data-fragment-index="3" -->
-  - TypeScript <!-- .element: class="fragment" data-fragment-index="3" -->
+- Extended an existing widget view
+- Updated render methods
+- Used `Sortable.js` to allow custom drag behavior
 
 ---
 
@@ -531,7 +509,7 @@ Thursday 8 April 2021 @ 10:15 a.m.
 
 > Where can I find the slides/source?
 
-[bit.ly/buildwidgetsds21](http://bit.ly/buildwidgetsds21)
+[bit.ly/customwidgetsds21](http://bit.ly/customwidgetsds21)
 
 > Where can I submit a question?
 
