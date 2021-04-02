@@ -56,8 +56,8 @@ $base-font-size: 18px;
 
 ```scss
 // Type (font)
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
-$font-family: "Lato", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap");
+$font-family: "Rubik", sans-serif;
 ```
 
 ## Modify Button Sizes

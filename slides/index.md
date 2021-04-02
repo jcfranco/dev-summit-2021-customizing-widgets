@@ -238,7 +238,7 @@ $button-color--hover: darken($button-color, 10%) !default;
 
 <!-- preview page requires utility to be running -->
 
-[Preview](http://localhost:3001/preview/) | [Demo Steps](../demos/custom-theme/STEPS.md)
+[Preview](../demos/custom-theme/index.html) | [Demo Steps](../demos/custom-theme/STEPS.md)
 
 ---
 
@@ -520,3 +520,11 @@ Thursday 8 April 2021 @ 10:15 a.m.
 <section data-markdown data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-5.png">
 
 <img src="../node_modules/esri-reveal.js-templates/img/esri-science-logo-white.png" />
+
+---
+
+<section data-markdown data-background="../node_modules/esri-reveal.js-templates/img/2021/dev-summit/bg-5.png">
+
+Please provide your feedback for this session by clicking on the session survey link directly below the video
+
+<!-- .element: style="margin: 0 20%;" -->
